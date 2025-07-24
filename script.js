@@ -14,6 +14,7 @@ class BPMCalculator {
         this.currentBPMInput = document.getElementById('current-bpm');
         this.nextBPMInput = document.getElementById('next-bpm');
         this.currentTapBtn = document.getElementById('current-tap-btn');
+        this.tapArea = document.getElementById('tap-area');
         this.percentageDisplay = document.getElementById('percentage-display');
         this.directionDisplay = document.getElementById('direction');
         this.tapSection = document.getElementById('tap-section');
@@ -34,8 +35,13 @@ class BPMCalculator {
         this.currentBPMInput.addEventListener('input', () => this.calculatePercentage());
         this.nextBPMInput.addEventListener('input', () => this.calculatePercentage());
 
-        // Tap tempo listener - only for current track
+        // Tap tempo listeners - for current track button and pitch display area
         this.currentTapBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.tap();
+        });
+
+        this.tapArea.addEventListener('click', (e) => {
             e.preventDefault();
             this.tap();
         });
@@ -152,10 +158,12 @@ class BPMCalculator {
             }
         }
         
-        // Visual feedback - briefly flash the button
+        // Visual feedback - briefly flash both tap areas
         this.currentTapBtn.style.transform = 'scale(0.95)';
+        this.tapArea.style.transform = 'scale(0.98)';
         setTimeout(() => {
             this.currentTapBtn.style.transform = '';
+            this.tapArea.style.transform = '';
         }, 100);
     }
 

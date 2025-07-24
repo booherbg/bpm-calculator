@@ -113,7 +113,7 @@ main {
 }
 
 .tap-btn.active {
-    background: #ff6b6b;
+    background: #28a745;
     animation: pulse 0.6s ease-in-out;
 }
 
@@ -126,14 +126,6 @@ main {
 /* Result Section */
 .result-section {
     text-align: center;
-}
-
-.result-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .result-card h3 {
@@ -154,6 +146,36 @@ main {
     font-size: 1rem;
     opacity: 0.8;
     font-weight: 400;
+}
+
+.tap-hint {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+.result-card:active {
+    transform: translateY(0);
+}
+
+.result-card.active {
+    animation: pulse 0.6s ease-in-out;
 }
 
 /* Tap Section */
