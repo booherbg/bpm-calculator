@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPM Calculator for Vinyl DJs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 BPM Calculator</h1>
+            <p>Perfect pitch matching for vinyl DJs</p>
+        </header>
+
+        <main>
+            <!-- BPM Input Section -->
+            <section class="bpm-section">
+                <div class="bpm-inputs">
+                    <div class="bpm-group">
+                        <label for="current-bpm">Current Track BPM</label>
+                        <input type="number" id="current-bpm" placeholder="120" min="60" max="200" step="0.1">
+                        <button class="tap-btn" id="current-tap-btn">Tap Tempo</button>
+                    </div>
+                    
+                    <div class="bpm-group">
+                        <label for="next-bpm">Next Track BPM</label>
+                        <input type="number" id="next-bpm" placeholder="125" min="60" max="200" step="0.1">
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-card">
+                        <h3>Pitch Adjustment</h3>
+                        <div class="percentage-display" id="percentage-display">0%</div>
+                        <div class="direction" id="direction">Set both BPMs to calculate</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tap Tempo Display -->
+            <section class="tap-section" id="tap-section" style="display: none;">
+                <div class="tap-display">
+                    <div class="tap-info">
+                        <span id="tap-count">0</span> taps
+                        <span id="tap-bpm">0</span> BPM
+                    </div>
+                    <div class="tap-controls">
+                        <button id="reset-tap-btn" class="reset-btn">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lookup Table Section -->
+            <section class="table-section">
+                <h2>Quick Reference Table</h2>
+                <div class="table-controls">
+                    <div class="range-controls">
+                        <div class="range-group">
+                            <label for="range-start">BPM Range Start:</label>
+                            <input type="number" id="range-start" value="80" min="60" max="200" step="1">
+                        </div>
+                        <div class="range-group">
+                            <label for="range-end">BPM Range End:</label>
+                            <input type="number" id="range-end" value="140" min="60" max="200" step="1">
+                        </div>
+                        <div class="range-group">
+                            <label for="range-step">Step Size:</label>
+                            <select id="range-step">
+                                <option value="1">1 BPM</option>
+                                <option value="2">2 BPM</option>
+                                <option value="5">5 BPM</option>
+                                <option value="10">10 BPM</option>
+                            </select>
+                        </div>
+                        <button id="generate-table-btn" class="generate-btn">Generate Table</button>
+                    </div>
+                    <div class="table-filters">
+                        <div class="table-filter">
+                            <label for="table-current">Filter Current BPM:</label>
+                            <select id="table-current">
+                                <option value="">All BPMs</option>
+                            </select>
+                        </div>
+                        <div class="table-filter">
+                            <label for="table-next">Filter Next BPM:</label>
+                            <select id="table-next">
+                                <option value="">All BPMs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="bpm-table">
+                        <thead>
+                            <tr>
+                                <th>Current BPM</th>
+                                <th>Next BPM</th>
+                                <th>Pitch %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Table will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built for vinyl DJs who love perfect pitch matching</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
