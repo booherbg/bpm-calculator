@@ -70,6 +70,10 @@ A simple, responsive web tool designed specifically for vinyl DJs to calculate t
 - Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
+## 🚀 Live Demo
+
+**🌐 Live App**: https://booherbg.github.io/bpm-calculator/
+
 ## 🚀 Deployment
 
 This app is designed to be deployed on GitHub Pages:
